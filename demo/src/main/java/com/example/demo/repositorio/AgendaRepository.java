@@ -118,15 +118,13 @@ public interface AgendaRepository extends JpaRepository<Agenda, String> {
                     @Param("fechaInicio") String fechaInicio);
 
     
-    @Modifying
-    @Transactional
-    @Query(value = "UPDATE Agendas SET estado = 'AGENDADA', paciente_cita = :afiliadoId, orden_cita = :ordenId " +
-                   "WHERE id = :agendaId AND estado = 'disponible'", nativeQuery = true)
-    int registrarAgendamiento(@Param("agendaId") String agendaId, 
-                              @Param("afiliadoId") String afiliadoId, 
-                              @Param("ordenId") String ordenId,
-                              @Param("fecha") String fecha,
-                              @Param("medico") String medico);
+        @Modifying
+        @Transactional
+        @Query(value = "UPDATE Agendas SET estado = 'AGENDADA', paciente_cita = :afiliadoId, orden_cita = :ordenId " +
+                       "WHERE id = :agendaId AND estado = 'disponible'", nativeQuery = true)
+        int registrarAgendamiento(@Param("agendaId") String agendaId, 
+                                  @Param("afiliadoId") String afiliadoId, 
+                                  @Param("ordenId") String ordenId);
          
 
 

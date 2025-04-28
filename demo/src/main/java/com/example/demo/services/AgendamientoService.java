@@ -36,32 +36,29 @@ public class AgendamientoService {
      * @throws ResponseStatusException si el espacio ya no está disponible o la orden no existe
      */
     @Transactional(isolation = Isolation.SERIALIZABLE, rollbackFor = ResponseStatusException.class)
-    public Agenda agendarServicio(String agendaId, String ordenId, String afiliadoId, String fecha, String medicoId) {
+    public Agenda agendarServicio(String agendaId, String ordenId, String afiliadoId) {
         // 1. Confirmar que la orden existe (si aplica)
         if (ordenId != null) {
-            Optional<Orden> optOrden = ordenRepository.findById(ordenId.toString());
-
-                if (!optOrden.isPresent()) {
-                    throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "La orden " + ordenId + " no existe");
-                }
+            Optional<Orden> optOrden = ordenRepository.findById(ordenId);
+            if (!optOrden.isPresent()) {
+                throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "La orden " + ordenId + " no existe");
             }
-
-            // 2. Obtener la agenda y confirmar disponibilidad
-            Agenda agenda = agendaRepository.darAgendaPorId(agendaId);
-            if (agenda == null) {
-                throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "El espacio de agenda " + agendaId + " no existe");
-            }
-
-
-            int updatedRows = agendaRepository.registrarAgendamiento(agendaId, afiliadoId, ordenId, fecha, medicoId);
-
-             // 3. Verificar si se realizó la actualización
-            if (updatedRows == 0) {
-                throw new ResponseStatusException(HttpStatus.CONFLICT, "El espacio de agenda ya no está disponible");
-             }
-         
-             // 4. Retornar la agenda actualizada
-            return agendaRepository.darAgendaPorId(agendaId); 
-            }
+        }
+    
+        // 2. Obtener la agenda y confirmar disponibilidad
+        Agenda agenda = agendaRepository.darAgendaPorId(agendaId);
+        if (agenda == null) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "El espacio de agenda " + agendaId + " no existe");
+        }
+    
+        // 3. Intentar actualizar la agenda (confirma disponibilidad y actualiza en un solo paso)
+        int updatedRows = agendaRepository.registrarAgendamiento(agendaId, afiliadoId, ordenId);
+        if (updatedRows == 0) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "El espacio de agenda ya no está disponible");
+        }
+    
+        // 4. Retornar la agenda actualizada
+        return agendaRepository.darAgendaPorId(agendaId); 
+    }
 
 }
