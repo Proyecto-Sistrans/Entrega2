@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="MODELOerSISTRANSfinal" id="BD3126D6-6DD7-FAFE-49F4-BD27D81EEC68" version="3.5">
+<createdBy>Laura</createdBy>
+<createdTime>2025-02-10 20:49:10 UTC</createdTime>
+<ownerDesignName>PROYECTO SISTRANS MODELO ER</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>BD3126D6-6DD7-FAFE-49F4-BD27D81EEC68</designId>
+</OSDM_Design>
