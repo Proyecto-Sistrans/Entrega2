@@ -1,0 +1,59 @@
+{
+	"info": {
+		"_postman_id": "04bbd680-751a-4827-b967-7ea2273aab9e",
+		"name": "RFC2 - Mostrar los 20 servicios más solicitados.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29685554"
+	},
+	"item": [
+		{
+			"name": "RFC2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fechaInicio\": \"2000-01-01\",\n    \"fechaFin\": \"2030-01-01\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/ipsandes/RFC2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ipsandes",
+						"RFC2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver todos los servicios",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/ipsandes/servicio",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ipsandes",
+						"servicio"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

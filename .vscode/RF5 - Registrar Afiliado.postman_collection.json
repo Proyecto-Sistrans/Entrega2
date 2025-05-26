@@ -1,0 +1,60 @@
+{
+	"info": {
+		"_postman_id": "5a8ce800-0869-456b-8669-4ac9e7f49d2d",
+		"name": "RF5 - Registrar Afiliado",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29685554"
+	},
+	"item": [
+		{
+			"name": "Ver todos los afiliados",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/ipsandes/afiliados",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ipsandes",
+						"afiliados"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear un Afiliado",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"tipodocumento\": \"CC\",\n        \"direccion\": \"Cra 7 #85-20, Bogotá\",\n        \"identificacion\": \"A1000\",   //Cambiar si da error\n        \"telefono\": \"123456789\",  //Cambiar si da error\n        \"nombre\": \"El pechi\",\n        \"fechanacimiento\": \"1985-06-12\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/ipsandes/afiliados/crear",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ipsandes",
+						"afiliados",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

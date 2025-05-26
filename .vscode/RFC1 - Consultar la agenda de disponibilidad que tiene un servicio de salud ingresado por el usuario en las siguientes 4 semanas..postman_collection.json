@@ -1,0 +1,79 @@
+{
+	"info": {
+		"_postman_id": "7a3318a2-4ad6-4773-948f-d6e9701b45d5",
+		"name": "RFC1 - Consultar la agenda de disponibilidad que tiene un servicio de salud ingresado por el usuario en las siguientes 4 semanas.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29685554"
+	},
+	"item": [
+		{
+			"name": "RFC 1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"codigoServicio\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/ipsandes/RFC1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ipsandes",
+						"RFC1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver todos los servicios",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/ipsandes/servicio",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ipsandes",
+						"servicio"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver todas las agendas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/ipsandes/agenda",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ipsandes",
+						"agenda"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

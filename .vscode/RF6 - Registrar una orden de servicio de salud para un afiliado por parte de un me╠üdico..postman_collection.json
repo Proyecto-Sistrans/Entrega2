@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "8872e361-3405-4955-bb26-96889c53b126",
+		"name": "RF6 - Registrar una orden de servicio de salud para un afiliado por parte de un médico.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29685554"
+	},
+	"item": [
+		{
+			"name": "Ver todos los médicos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/ipsandes/medico",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ipsandes",
+						"medico"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver todos los afiliados",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/ipsandes/afiliados",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ipsandes",
+						"afiliados"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver todas las ordenes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/ipsandes/orden",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ipsandes",
+						"orden"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear orden",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"descripcion\": \"Receta, exámenes y seguimiento\",\n        \"fecha\": \"2025-03-10\",\n        \"estado\": \"vigente\",\n        \"prescritaPor\": \"M001\",\n        \"numero\": 1000,   //cambiar si da error\n        \"prescritaPara\": \"A001\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/ipsandes/orden/crear",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ipsandes",
+						"orden",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

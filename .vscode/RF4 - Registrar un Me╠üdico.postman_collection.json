@@ -1,0 +1,60 @@
+{
+	"info": {
+		"_postman_id": "3ec86f13-ea00-448b-bcd3-4eb87e8f36c4",
+		"name": "RF4 - Registrar un Médico",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29685554"
+	},
+	"item": [
+		{
+			"name": "Ver todos los médicos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/ipsandes/medico",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ipsandes",
+						"medico"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear un Médico",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"tipo_documento\": \"CC\",\n        \"identificacion\": \"111111111\",  //cambiar este si da error\n        \"registro_medico\": \"M1000\",     //cambiar este si da error\n        \"nombre\": \"Sara Cárdenas\",\n        \"especialidad\": \"General\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/ipsandes/medico/crear",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ipsandes",
+						"medico",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

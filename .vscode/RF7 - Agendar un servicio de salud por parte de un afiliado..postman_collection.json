@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "fd7601fc-65ce-44e0-9a0d-39ab14ac2159",
+		"name": "RF7 - Agendar un servicio de salud por parte de un afiliado.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29685554"
+	},
+	"item": [
+		{
+			"name": "Ver todos los afiliados",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/ipsandes/afiliados",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ipsandes",
+						"afiliados"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver todos los médicos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/ipsandes/medico",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ipsandes",
+						"medico"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver todas las agendas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/ipsandes/agenda",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ipsandes",
+						"agenda"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear una agenda",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"fecha\": \"2025-06-05\",\n        \"estado\": \"terminada\",\n        \"orden_cita\": null,\n        \"medico_cita\": \"M001\",\n        \"servicio_cita\": 1,\n        \"paciente_cita\": \"A001\",\n        \"duracion\": 30,\n        \"id\": 1001 \n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/ipsandes/agenda/crear",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ipsandes",
+						"agenda",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver todos los servicios",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/ipsandes/servicio",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ipsandes",
+						"servicio"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
